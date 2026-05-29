@@ -64,3 +64,31 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+#setup-app-practice
+
+##概要
+
+COACHTECH教材 Tutorial9-1「環境構築ハンズオン」で作成した成果物です。
+Laravel sailとDockerを使って、Tutorial9～10のハンズオンで使う開発環境を構築しました。
+
+##使用技術
+
+- PHP 8.2
+- Laravel 10.0
+- Laravel Sail（Docker Compose）
+- MySQL, phpMyAdmin
+
+##学んだこと
+
+- Laravelプロジェクトの作成、インストール、Sailの設定ファイルの生成方法 -　
+- Ubuntuでのフォルダ移動は、「/mnt/c/Users/ユーザー名」のマウントの記載が必須。Ubuntuを起動したまま一定時間放置すると、マウントが解除されてしまうため、一度「wsl.exe --shutdown」で WSL を完全に停止し、再度起動すると再マウントされる。
+- 初期設定時、インストールやファイルの生成・編集がうまくできているのにSailの起動がうまくいかない場合は、「credential helper（認証情報ストア）」を呼び出せていないことが原因と考えられる。エラー内容に合わせて、credential-helperの設定を削除・既存の認証情報をクリアしたのち、再度起動のコマンドを試行すると良い。
+
+##動作確認
+
+- Windows環境では、Ubuntuを使用します。
+- 「./vendor/bin/sail up -d」（エイリアス設定後は「sail up -d」）で起動します。
+- Dockerでコンテナが起動したら、Webブラウザにて動作確認します。
+  　- URL「http://localhost/」でLaraevelsailのWelcomeページが,
+  「http://localhost」でphpmyadmin画面が表示されれば正常に動作しています。
